@@ -1,0 +1,12 @@
+<popupWindow ng-show="popupWindow.visible">
+    <heading>{{popupWindow.heading}}</heading>
+    <text>{{popupWindow.text}}</text>
+    <button-bar>
+        <button 
+        class="cursorHover woodButton"
+        ng-repeat="button in popupWindow.buttons"
+        ng-click="button.func()">
+            {{button.name}}
+        </button>
+    </button-bar>
+</popupWindow>

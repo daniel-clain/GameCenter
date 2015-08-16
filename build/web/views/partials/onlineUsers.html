@@ -1,0 +1,22 @@
+<ul>
+    <li ng-repeat="(player,playerObj) in onlineUsers" 
+        ng-right-click="rightClickPlayer(player)"                   
+        ng-dblclick="openChatWindow($parent.playerObj)" 
+        class="cursorHover"
+        ng-if="player!==$parent.player.name">
+        {{player}}
+        <light></light>
+        <rightClickMenu ng-show="playerObj.menu">
+            <list>
+                <options ng-repeat="option in rightClickOptions" 
+                         ng-click="option.func($parent.playerObj);playerObj.menu=false"  
+                         class="cursorHover"
+                         >
+                    {{option.name}}
+                </options>
+            </list>
+        </rightClickMenu>
+        
+        
+    </li>
+</ul>

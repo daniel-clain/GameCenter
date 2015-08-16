@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'myriad';
+    src: url('/GameCenter/resources/fonts/myriad/myriad.eot');
+    src: local('myriad'), url('/GameCenter/resources/fonts/myriad/myriad.woff') format('woff'), url('/GameCenter/resources/fonts/myriad/myriad.ttf') format('truetype');
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="mainCtrl">
+<head lang="en">
+    <title>Dan's Game Thing</title>
+    <meta charset="UTF-8">
+
+    <link href="resources/style.css" rel="stylesheet" />
+    <script src="https:/ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    
+    <script type='text/javascript' src='js/data.js'></script>
+    <script type='text/javascript' src='js/directives.js'></script>
+    <script type='text/javascript' src='js/main.js'></script>
+    <script type='text/javascript' src='js/services.js'></script>
+    
+    
+    <script type='text/javascript' src='js/directives/mainScreen.js'></script>
+    <script type='text/javascript' src='js/directives/onlineUsers.js'></script>
+    <script type='text/javascript' src='js/directives/generalGUI.js'></script>
+    <script type='text/javascript' src='js/moduleJS/ArcherGame.js'></script>
+    <script type='text/javascript' src='js/moduleJS/ArcherGameFactory.js'></script>
+    
+</head>
+<body>
+    
+<container></container>
+    
+    
+    <audio id="death" preload="auto"><source src="resources/sound/death.mp3" type="audio/mp3" /></audio>
+    <audio id="attack" preload="auto"><source src="resources/sound/attack.mp3" type="audio/mp3" /></audio>
+    <audio id="playerDie" preload="auto"><source src="resources/sound/playerDie.mp3" type="audio/mp3" /></audio>
+    <audio id="moveCard" preload="auto"><source src="resources/sound/moveCard.mp3" type="audio/mp3" /></audio>
+</body>
+</html>

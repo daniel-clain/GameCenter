@@ -1,0 +1,7 @@
+main-screen {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: url(../images/bg.jpg);
+  /* background-size: 100%; */
+}

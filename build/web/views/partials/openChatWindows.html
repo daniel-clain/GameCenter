@@ -1,0 +1,16 @@
+<chatWindow ng-repeat="chatWindow in openChatWindows">
+    <top><name>{{chatWindow.otherPlayer.name}}</name><minimize-btn></minimize-btn><close-btn></close-btn></top>
+    <chatArea>
+        <chatLog>
+            <log ng-repeat="log in chatWindow.chatLog">
+            <who>{{log.who}}<span>({{log.time | date:"h:mma"}})</span>:<msg>{{log.chat}}</msg>
+            </log>
+        </chatlog>
+        <input ng-model="chatWindow.chat"  ng-keypress="send($event,chatWindow)"/>
+    </chatArea>
+    <tab>
+        <name>{{chatWindow.otherPlayer.name}}</name>
+        <light ng-class="{green:chatWindow.otherPlayer.status==='online',grey:chatWindow.otherPlayer.status==='offline'}"></light>
+        <close-btn></close-btn>
+    </tab>
+</chatWindow>

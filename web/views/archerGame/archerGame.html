@@ -1,0 +1,52 @@
+<battle-arena ng-click="x.fireArrow($event)" ng-right-click="x.rightClickArena($event)">
+    <point-marker
+        ng-style="{top:x.player.champ.destination.top+'px',left:x.player.champ.destination.left+'px'}">
+        
+    </point-marker>
+    <buttons>
+        <btn ng-repeat="(name,detail) in f.buttons">
+            <icon class="{{name}}"></icon>
+            <count>{{detail.count}}</count>
+        </btn>
+    </buttons>
+    
+    
+    <player-archer 
+        class="archer"
+        ng-class="[x.player.side, x.player.champ.name]"
+        ng-show="x.player.champ.champVisible"
+        ng-style="{top:x.player.champ.location.top+'px',left:x.player.champ.location.left+'px'}">
+        <model></model>
+        <arrowBundle>{{x.player.champ.currentArrows}}<bundleIcon></bundleIcon></arrowBundle>
+        <healthBar>
+            <health ng-style="{width:(x.player.champ.currentHealth/x.player.champ.totalHealth*100)+'%'}"></health>
+        </healthBar>
+    </player-archer>
+
+
+    <opponent-archer 
+        class="archer" 
+        ng-class="[x.opponent.side, x.opponent.champ.name]"
+        ng-show="x.opponent.champ.champVisible"
+        ng-style="{top:x.opponent.champ.location.top+'px',left:x.opponent.champ.location.left+'px'}">
+        <model></model>
+        <arrowBundle>{{x.opponent.champ.currentArrows}}<bundleIcon></bundleIcon></arrowBundle>
+        <healthBar>
+            <health ng-style="{width:(x.opponent.champ.currentHealth/x.opponent.champ.totalHealth*100)+'%'}"></health>
+        </healthBar>
+    </opponent-archer>
+    
+    <game-finish ng-class="{active:x.player.finish!==undefined}" ng-click="x.endGameClick($event)" ng-right-click="x.endGameClick($event)"></game-finish>
+    <hud ng-hide="true">
+        <hud-frame></hud-frame>
+        <hud-container></hud-container>
+            
+    </hud>
+    
+</battle-arena>
+
+
+
+
+<champ-select ng-class="{active:x.champselectpanelopen}"></champ-select>
+

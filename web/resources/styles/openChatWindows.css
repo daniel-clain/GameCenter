@@ -1,0 +1,89 @@
+open-chat-windows {
+  position: absolute;
+  bottom: 0px;
+  display: block;
+  width: 100%;
+  background: #0C0F1F;
+  height: 37px;
+  overflow: visible;
+}
+
+chatwindow {
+  display: inline-block;
+  margin-left: 10px;
+  background: #2A3A6E;
+  padding: 5px;
+  position: relative;
+  color: #fff;
+  font-family: myriad;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid #495F8E;
+  top: -273px;
+  height: 273px;
+  box-sizing: border-box;
+}
+chatwindow top {
+  padding: 0 5px 6px;
+  display: block;
+}
+chatwindow name {
+  font-size: 15px;
+}
+chatlog {
+  display: table-cell;
+  height: 190px;
+  overflow: auto;            
+  width: 200px;
+  vertical-align: bottom;
+}
+chatArea{    
+  display: block;
+  background: #07112A;
+  height: 190px;
+  padding: 6px;
+  width: 200px;
+  overflow: auto;
+  border: 2px solid #07112A;
+}
+tab {
+  position: absolute;
+  bottom: -30px;
+  background: #2A3A6E;
+  height: 30px;
+  width: 140px;
+  left: 6px;
+  border: 1px solid #495F8E;
+  border-top: none;
+  border-radius: 0px 0px 4px 4px;
+  padding: 5px 5px 5px 10px;
+  box-sizing: border-box;
+}
+
+
+who {
+  color: #aaaaff;
+  display: block;
+}
+msg {
+  color: #fff;
+  margin-left: 3px;
+}
+chatwindow close-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+chatwindow minimize-btn {
+  position: absolute;
+  right: 30px;
+  top: 4px;
+}
+
+chatwindow input {
+  width: 202px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  border-radius: 4px;
+}

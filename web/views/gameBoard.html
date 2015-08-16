@@ -1,0 +1,39 @@
+<gameBoard>
+
+    <player1 class="player">
+        <img src="resources/images/portrait.png"/>
+        <mana>Mana: {{manaDisplay("p1")}}</mana>
+        <health>Health: {{theGame.player1.health}}</health>
+        <divider4></divider4>
+        <hand>
+            <card ng-repeat="cards in theGame.player1.hand" id="{{cards.id}}"></card>
+        </hand>
+        <divider20></divider20>
+        <inPlay>
+            <card ng-repeat="cards in theGame.player1.inPlay" id="{{cards.id}}"></card>
+        </inPlay>
+        <divider4></divider4>
+
+        <deck><span>{{theGame.player1.deck.length}}</span></deck>
+    </player1>
+
+
+    <player2 class="player">
+        <img src="resources/images/portrait.png"/>
+        <mana>Mana: {{manaDisplay("p2")}}</mana>
+        <health>Health: {{theGame.player2.health}}</health>
+        <divider4></divider4>
+        <inPlay>
+            <card ng-repeat="cards in theGame.player2.inPlay" id="{{cards.id}}"></card>
+        </inPlay>
+        <divider20></divider20>
+        <hand>
+            <card ng-repeat="cards in theGame.player2.hand" id="{{cards.id}}"></card>
+        </hand>
+        <divider4></divider4>
+        <deck><span>{{theGame.player2.deck.length}}</span></deck>
+    </player2>
+
+    <endTurn ng-click="endTurn()">End Turn</endTurn>
+
+</gameBoard>

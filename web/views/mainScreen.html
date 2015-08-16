@@ -1,0 +1,31 @@
+<!--
+-view online players
+-button to manage decks
+-button for settings(all pages)
+-button to que for game
+-->
+<online-users></online-users>
+
+<open-chat-windows></open-chat-windows>
+
+
+<chatroom ng-hide="true">
+    <heading>Group Chat Room</heading>
+    
+    <chatContainer>
+        <chatLog>
+            <log ng-repeat="msg in forumLog">{{msg}}<br/></log>
+        </chatlog>
+    </chatContainer>
+    <bottom>
+        <input type="text" ng-model="input"/>
+        <button ng-click="send()" >Send</button>
+    </bottom>
+</chatroom>
+
+<div ng-hide="true">
+    <button type="button" ng-click="closeSocket()" >Close</button>
+</div>
+
+
+

@@ -1,0 +1,421 @@
+archer-game {
+  display: block;
+  overflow: hidden;
+  height: 100%;
+}
+
+battle-arena {
+  background: url('../images/archerGame/arena.jpg');
+  display: block;
+  min-width: 1700px;
+  min-height: 100%;
+  background-size: cover;              
+  height: 100%;              
+  position: fixed;              
+  width: 100%;
+}
+.parchmentBg {
+  background: url(images/parchment-bg.jpg);
+  display: block;
+  width: 1000px;
+  padding: 40px 0;
+  background-size: 100%;
+  margin: 100px auto;
+  border: 6px outset #BA915B;
+  border-radius: 10px;
+  box-shadow: 9px 9px 30px 12px;
+}
+
+.parchmentBg>heading {
+  display: block;
+  font-size: 40px;
+  font-family: myriad;
+  margin: 0 0 20px 50px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+champ-select {
+  display: block;
+  z-index: 10;
+  transition: all 0.2s;
+  transform: scale(0);
+}
+champ-select.active{
+  transform: scale(1);
+    
+}
+
+champs {
+  display: block;
+  text-align: center;
+}
+
+champ {
+  display: inline-block;
+  margin: 0 20px;
+  text-align: center;
+  position: relative;
+  -webkit-filter: brightness(1);
+  transition: all 0.2s;
+}
+
+champ portrait {
+  display: block;
+  border: 15px solid #333;
+  border-radius: 20px;
+  background: rgba(100,100,100,0.8);
+  width: 400px;
+  height: 400px;
+  transition: all 0.2s;
+  transform: scale(0.995);
+  position: relative;
+  overflow: hidden;
+}
+champ.greyedOut {
+  -webkit-filter: brightness(0.7);
+}
+
+champ>name {
+  font-family: myriad;
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: 1px 1px 10px #000;
+  color: #E9E133;
+}
+statsBox{
+    opacity:0;
+    position: absolute;
+    width: 330px;
+    top: 250px;
+    background: rgba(33, 33, 33, 0.8);
+    left: 50px;
+    border: 2px ridge #222;
+    color: #fff;
+    text-align: left;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: myriad;
+    transition: all 0.2s;
+}
+
+champ.hover statsBox{
+    opacity:1;
+}
+champ.hover portrait {
+  box-shadow: 9px 9px 6px 0px rgba(44,44,44,0.8);
+  transform: scale(1);
+}
+statinfo name {
+  width: 270px;
+  display: inline-block;
+}
+statsbox heading {
+  font-size: 20px;
+  border-bottom: 1px solid #fff;
+  display: block;
+  margin-bottom: 7px;
+}
+
+selectedtag {    
+  transform: scale(0) rotate(-30deg);
+  display: block;
+  position: absolute;
+  width: 420px;
+  z-index: 10;
+  background-color: red;
+  padding: 6px 0px;
+  box-sizing: border-box;
+  left: -126px;
+  top: 30px;
+  box-shadow: 1px 0px 4px 2px rgba(0,0,0,0.8);
+}
+
+champ.selected selectedTag{ 
+  transform: scale(1) rotate(-30deg);
+  transition: all 0.2s cubic-bezier(0.785, 0.285, 0.435, 1.535);
+}
+
+selectedTag txt {
+  border-top: 2px solid #fff;
+  display: block;
+  border-bottom: 2px solid #fff;
+  padding: 1px 0px;
+  color: #fff;
+  font-family: myriad;
+  font-size: 24px;
+}
+
+point-marker {
+  background: url(../images/archerGame/point-marker.png);
+  display: block;
+  width: 17px;
+  height: 26px;
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  left: 10px;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.markerBlink{
+  opacity:1;   
+}
+
+.archer{
+    width:150px;
+    display:block;
+    position:absolute; 
+    overflow:visible;
+}
+.arrow{
+    display: block;
+    position:absolute;
+    width:100px;
+    z-index: 10;
+    width:154px;
+    
+}
+.arrow.JaraxisArrow{
+    height:20px;    
+}
+.arrow.MordeArrow{
+    height:18px;    
+}
+.arrow.JaraxisArrow.left{
+    background:url(../images/archerGame/jaraxisArrowRight.png);     
+}
+.arrow.JaraxisArrow.right{
+    background:url(../images/archerGame/jaraxisArrowLeft.png);      
+}
+.arrow.MordeArrow.left{
+    background:url(../images/archerGame/mordeArrowRight.png);     
+}
+.arrow.MordeArrow.right{
+    background:url(../images/archerGame/mordeArrowLeft.png);      
+}
+
+
+.archer model{
+    display:block;
+}
+
+.Jaraxis.left model{
+    background:url(../images/archerGame/Jaraxis-left.png);        
+}
+.Jaraxis.right model{
+    background:url(../images/archerGame/Jaraxis-right.png);
+}
+.Morde.left model{
+    background:url(../images/archerGame/Morde-left.png);
+}
+.Morde.right model{
+    background:url(../images/archerGame/Morde-right.png);
+}
+
+.Jaraxis{    
+    height: 187px;
+}
+.Morde{    
+    height: 180px;
+}
+
+
+.Jaraxis model{
+    height:222px;
+    margin-top:-35px;    
+}
+.Morde model{
+    height:220px;
+    margin-top:-40px;    
+    display: block;
+}
+blood{
+    background:url(../images/archerGame/blood.png);
+    width:89px;
+    height:69px;
+    position:absolute;
+    display:block;
+    opacity:1;
+}
+
+.fadeAway{
+    opacity:0;
+    transition: opacity 0.3s;
+}
+hud{    
+  display: block !important;
+  width: 60%;
+  height: 106px;
+  position: absolute;
+  bottom: 0px;
+  margin-left: 20%;
+  overflow:hidden;
+}
+hud hud-frame {
+  background-image: url(../images/archerGame/hud_leftCorner.png), url(../images/archerGame/hud_rightCorner.png), url(../images/archerGame/hud_middleRepeat.png);
+  background-position: left,right,center;
+  background-repeat: no-repeat,no-repeat,repeat-x;
+  display: block;
+  height: 130px;
+  position: absolute;
+  width: 100%;
+  z-index: 20;
+}
+hud hud-container{
+    background: url(../images/archerGame/stoneBg_repeat.jpg) repeat;
+    margin: 20px 20px 0;
+    display: block;
+    height: 110px;
+}
+
+healthbar health {
+  height: 4px;
+  display: block;
+  background-color: #55D35F;
+}
+
+healthbar {
+  width: 100px;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  height: 4px;
+  background-color: #aaa;
+  border: 1px solid #555;
+}
+
+game-finish {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* opacity: 0; */
+    /* display: none; */
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+
+game-finish.active{
+    opacity: 1;
+    display: block;
+    transition:display 0s, opacity 1s;
+    
+}
+game-finish redBtn {
+    margin-bottom: 10px;
+}
+
+finishimg {
+    width: 775px;
+    height: 302px;
+    display: block;
+    margin: 80px auto 40px;
+}
+
+finishimg.defeat{
+    background: url(../images/archerGame/defeat.png) center no-repeat;
+}
+finishimg.victory{
+    background: url(../images/archerGame/victory.png) center no-repeat;
+}
+
+
+
+arrowBundle {
+  position: absolute;
+  width: 20px;
+  top: -24px;
+  text-align: right;
+  vertical-align: top;
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px #333, -1px 1px #333, -1px -1px #333, 1px -1px #333;
+}
+bundleIcon {
+  background: url(../images/archerGame/bundle.png) center no-repeat;
+  background-size: 30px;
+  width: 30px;
+  height: 44px;
+  position: absolute;
+  left: 15px;
+  top: -4px;
+}
+.archer.left arrowBundle {
+  left: -29px;
+}
+.archer.right arrowBundle {
+  right: 20px;
+}
+
+buff{
+    position:absolute;    
+}
+buff.heal{
+    width:40px;
+    height:40px;
+    background:url(../images/archerGame/heal.png)
+}
+buff.arrows{
+    width:77px;
+    height:60px;
+    background:url(../images/archerGame/arrows.png)
+}
+buff.shield {
+    width: 38px;
+    height: 51px;
+    background: url(../images/archerGame/shield.png);
+    background-size: 38PX;
+}
+
+
+battle-arena btn {
+    display: block;
+    width: 46px;
+    height: 40px;
+    position: relative;
+    z-index: 10;
+    border: outset 2px #aaa;
+    background-size: 30px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #fcfcfc 16%, #d8d8d8 84%, #c6c6c6 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(16%,#fcfcfc), color-stop(84%,#d8d8d8), color-stop(100%,#c6c6c6));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#fcfcfc 16%,#d8d8d8 84%,#c6c6c6 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#fcfcfc 16%,#d8d8d8 84%,#c6c6c6 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#fcfcfc 16%,#d8d8d8 84%,#c6c6c6 100%);
+    background: linear-gradient(to bottom, #ffffff 0%,#fcfcfc 16%,#d8d8d8 84%,#c6c6c6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c6c6c6',GradientType=0 );
+    border-radius: 3px;
+    font-family: myriad;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 4px;
+    box-sizing: border-box;
+    padding-top: 5px;
+}
+battle-arena btn icon.shield {    
+    background: url(../images/archerGame/shield.png);
+    background-size: 20px;
+    width: 20px;
+    height: 26px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+}
+battle-arena buttons {
+    margin: 10px 0 0 12px;
+    display: block;
+    z-index: 0;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+

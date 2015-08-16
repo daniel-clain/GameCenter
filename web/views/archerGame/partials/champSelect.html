@@ -1,0 +1,30 @@
+<champSelectPanel class="parchmentBg">
+    <heading>{{x.champSelectHeading}}</heading>
+    <champs>
+        <champ 
+            ng-repeat="champ in f.champList" 
+            ng-mouseover="x.hoverChampFunc(champ.name)"
+            ng-mouseleave="x.hoverChampFunc('none')"
+            ng-click="x.selectChamp(champ.name)"
+            ng-class="{greyedOut:x.hoverChamp!=='none' && x.hoverChamp!==champ.name,
+                        hover:x.hoverChamp===champ.name,
+                        selected:x.selectedChamp===champ.name}"
+            class="cursorHover">
+            <portrait 
+                ng-style="{'background-image':'url(./resources/images/archerGame/'+champ.name+'_portrait.png)'}">
+                <selectedTag><txt>Selected!</txt></selectedTag>
+                
+            </portrait>
+            
+            <statsBox>
+                <heading>Stats</heading>
+                <statInfo ng-repeat="(name,val) in champ.stats">
+                    <name>{{name}}</name>
+                    <value>{{val}}</value>
+                </statInfo>
+            </statsBox>
+            <name>{{champ.name}}</name>
+        </champ>
+    </champs>
+    
+</champSelectPanel>
